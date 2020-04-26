@@ -20,5 +20,20 @@ namespace Employees
             return Benefits.ComputePayDeduction();
         }
 
+        public static void GivePromotion(Employee emp)
+        {
+            Console.WriteLine($"{emp.Name} was promoted!");
+
+            switch (emp)
+            {
+                case SalesPerson s:
+                    Console.WriteLine($"{emp.Name} made {s.SalesNumber} sale(s)");
+                    break;
+                case Manager m:
+                    Console.WriteLine($"{emp.Name} had {m.StokOptions} stock options...");
+                    break;
+            }
+
+        }
     }
 }

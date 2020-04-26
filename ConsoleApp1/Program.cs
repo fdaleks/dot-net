@@ -12,9 +12,9 @@ namespace ConsoleApp1
             Console.WriteLine("***** Basic Console I/O *****\r\n");
 
             //WorkWithCars();
-            //WorkWithEmployees();
+            WorkWithEmployees();
             //WotkWithShapes();
-            WorkWithPolymporphism();
+            //WorkWithPolymporphism();
 
             Console.ReadLine();
         }
@@ -47,11 +47,13 @@ namespace ConsoleApp1
             SalesPerson fred = new SalesPerson("Fred", 27, 1653, 684.70, "323-989-454", 50);
             fred.GiveBonus(117.9);
             fred.DisplayStatus();
+            Employee.GivePromotion(fred);
             Console.WriteLine();
 
             Manager joe = new Manager("Joe", 36, 1348, 984.5, "141-585-363", 4500);
             joe.GiveBonus(300);
             joe.DisplayStatus();
+            Employee.GivePromotion(joe);
             Console.WriteLine();
         }
 
