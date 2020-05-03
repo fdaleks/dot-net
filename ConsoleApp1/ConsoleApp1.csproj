@@ -92,6 +92,9 @@
   <ItemGroup>
     <Compile Include="Cars\Car.cs" />
     <Compile Include="Cars\MiniVan.cs" />
+    <Compile Include="CustomException\Car.cs" />
+    <Compile Include="CustomException\Exceptions\CarIsDeadException.cs" />
+    <Compile Include="CustomException\Radio.cs" />
     <Compile Include="Employees\BenefitPackage.cs" />
     <Compile Include="Employees\Employee.Core.cs" />
     <Compile Include="Employees\Employee.cs" />
@@ -104,6 +107,8 @@
     <Compile Include="Shapes\Point.cs" />
     <Compile Include="Shapes\Rectangle.cs" />
     <Compile Include="Shapes\Shape.cs" />
+    <Compile Include="SimpleException\Car.cs" />
+    <Compile Include="SimpleException\Radio.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

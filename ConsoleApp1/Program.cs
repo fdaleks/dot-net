@@ -1,7 +1,11 @@
 ﻿using System;
-using Cars;
+using System.Collections;
+//using Cars;
 using Employees;
 using Shapes;
+//using SimpleException;
+using CustomException;
+using CustomException.Exceptions;
 
 namespace ConsoleApp1
 {
@@ -12,10 +16,33 @@ namespace ConsoleApp1
             Console.WriteLine("***** Basic Console I/O *****\r\n");
 
             //WorkWithCars();
-            WorkWithEmployees();
+            //WorkWithEmployees();
             //WotkWithShapes();
             //WorkWithPolymporphism();
+            WorkWithExceptions();
 
+            Console.ReadLine();
+        }
+
+        private static void WorkWithExceptions()
+        {
+            Car myCar = new Car("BMW", 20);
+            myCar.CrankTunes(true);
+            try
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    myCar.Accelerate(10);
+                }
+            }
+            catch(CarIsDeadException ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ErrorTimeStamp);
+                Console.WriteLine(ex.CauseOfError);
+            }
+
+            
             Console.ReadLine();
         }
 
@@ -57,7 +84,7 @@ namespace ConsoleApp1
             Console.WriteLine();
         }
 
-
+        /*
         private static void WorkWithCars()
         {
             Car myCar = new Car(85)
@@ -72,5 +99,6 @@ namespace ConsoleApp1
             Console.WriteLine($"Current speed of my minivan is {myVan.Speed}");
             
         }
+        */
     }
 }
