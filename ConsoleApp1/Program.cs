@@ -4,8 +4,10 @@ using System.Collections;
 using Employees;
 using Shapes;
 //using SimpleException;
-using CustomException;
-using CustomException.Exceptions;
+//using CustomException;
+//using CustomException.Exceptions;
+using ProcessMultipleExceptions;
+using ProcessMultipleExceptions.Exceptions;
 
 namespace ConsoleApp1
 {
@@ -16,7 +18,7 @@ namespace ConsoleApp1
             Console.WriteLine("***** Basic Console I/O *****\r\n");
 
             //WorkWithCars();
-            WorkWithEmployees();
+            //WorkWithEmployees();
             //WotkWithShapes();
             //WorkWithPolymporphism();
             WorkWithExceptions();
@@ -26,23 +28,30 @@ namespace ConsoleApp1
 
         private static void WorkWithExceptions()
         {
-            Car myCar = new Car("BMW", 20);
+            Car myCar = new Car("BMW", 90);
             myCar.CrankTunes(true);
             try
             {
-                for (int i = 0; i < 10; i++)
-                {
-                    myCar.Accelerate(10);
-                }
+                myCar.Accelerate(-10);
             }
-            catch(CarIsDeadException ex)
+            catch (CarIsDeadException ex) when (ex.ErrorTimeStamp.DayOfWeek != DayOfWeek.Friday)
             {
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.ErrorTimeStamp);
                 Console.WriteLine(ex.CauseOfError);
             }
-
-            
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                myCar.CrankTunes(false);
+            }
             Console.ReadLine();
         }
 
