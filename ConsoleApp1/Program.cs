@@ -1,7 +1,11 @@
 ﻿using System;
-using Cars;
+using System.Collections;
+//using Cars;
 using Employees;
 using Shapes;
+//using SimpleException;
+using CustomException;
+using CustomException.Exceptions;
 
 namespace ConsoleApp1
 {
@@ -15,7 +19,30 @@ namespace ConsoleApp1
             WorkWithEmployees();
             //WotkWithShapes();
             //WorkWithPolymporphism();
+            WorkWithExceptions();
 
+            Console.ReadLine();
+        }
+
+        private static void WorkWithExceptions()
+        {
+            Car myCar = new Car("BMW", 20);
+            myCar.CrankTunes(true);
+            try
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    myCar.Accelerate(10);
+                }
+            }
+            catch(CarIsDeadException ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ErrorTimeStamp);
+                Console.WriteLine(ex.CauseOfError);
+            }
+
+            
             Console.ReadLine();
         }
 
@@ -47,11 +74,13 @@ namespace ConsoleApp1
             SalesPerson fred = new SalesPerson("Fred", 27, 1, 684.70, "323-989-454", 50);
             fred.GiveBonus(117.9);
             fred.DisplayStatus();
+            Employee.GivePromotion(fred);
             Console.WriteLine();
 
             Manager joe = new Manager("Joe", 36, 2, 984.5, "141-585-363", 4500);
             joe.GiveBonus(300);
             joe.DisplayStatus();
+            Employee.GivePromotion(joe);
             Console.WriteLine();
 
             object frank = new Manager("Frank", 34, 3, 1024.8, "481-958-326", 4200);
@@ -59,7 +88,7 @@ namespace ConsoleApp1
             SalesPerson jill = new PTSealedPerson("Jill", 30, 5, 1301.9, "157-349-970", 4295);
         }
 
-
+        /*
         private static void WorkWithCars()
         {
             Car myCar = new Car(85)
@@ -74,5 +103,6 @@ namespace ConsoleApp1
             Console.WriteLine($"Current speed of my minivan is {myVan.Speed}");
             
         }
+        */
     }
 }
