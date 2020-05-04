@@ -12,9 +12,9 @@ namespace ConsoleApp1
             Console.WriteLine("***** Basic Console I/O *****\r\n");
 
             //WorkWithCars();
-            //WorkWithEmployees();
+            WorkWithEmployees();
             //WotkWithShapes();
-            WorkWithPolymporphism();
+            //WorkWithPolymporphism();
 
             Console.ReadLine();
         }
@@ -44,15 +44,19 @@ namespace ConsoleApp1
 
         private static void WorkWithEmployees()
         {
-            SalesPerson fred = new SalesPerson("Fred", 27, 1653, 684.70, "323-989-454", 50);
+            SalesPerson fred = new SalesPerson("Fred", 27, 1, 684.70, "323-989-454", 50);
             fred.GiveBonus(117.9);
             fred.DisplayStatus();
             Console.WriteLine();
 
-            Manager joe = new Manager("Joe", 36, 1348, 984.5, "141-585-363", 4500);
+            Manager joe = new Manager("Joe", 36, 2, 984.5, "141-585-363", 4500);
             joe.GiveBonus(300);
             joe.DisplayStatus();
             Console.WriteLine();
+
+            object frank = new Manager("Frank", 34, 3, 1024.8, "481-958-326", 4200);
+            Employee moonUnit = new Manager("MoonUnit Zappa", 29, 4, 1173.8, "981-783-658", 4315);
+            SalesPerson jill = new PTSealedPerson("Jill", 30, 5, 1301.9, "157-349-970", 4295);
         }
 
 

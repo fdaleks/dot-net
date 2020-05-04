@@ -96,6 +96,7 @@
     <Compile Include="Employees\Employee.Core.cs" />
     <Compile Include="Employees\Employee.cs" />
     <Compile Include="Employees\Manager.cs" />
+    <Compile Include="Employees\PTSealedPerson.cs" />
     <Compile Include="Employees\SalesPerson.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
