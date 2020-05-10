@@ -2,12 +2,13 @@
 using System.Collections;
 //using Cars;
 using Employees;
-using Shapes;
+//using Shapes;
 //using SimpleException;
 //using CustomException;
 //using CustomException.Exceptions;
 using ProcessMultipleExceptions;
 using ProcessMultipleExceptions.Exceptions;
+using CustomInterface;
 
 namespace ConsoleApp1
 {
@@ -19,11 +20,33 @@ namespace ConsoleApp1
 
             //WorkWithCars();
             //WorkWithEmployees();
-            //WotkWithShapes();
+            //WorkWithShapes();
             //WorkWithPolymporphism();
-            WorkWithExceptions();
+            //WorkWithExceptions();
+            WorkWithInterface();
 
             Console.ReadLine();
+        }
+
+        private static void WorkWithInterface()
+        {
+            //Hexagon hex = new Hexagon();
+            //Console.WriteLine($"Points: {hex.Points}");
+
+            Shape[] shapes = { new Hexagon("Joe"), new Circle("Max"), new Triangle("Vladislav"), new Circle("Betty") };
+
+            foreach(var shape in shapes)
+            {
+                shape.Draw();
+                if (shape is IPointy ip)
+                {
+                    Console.WriteLine($" -> Points: {ip.Points}");
+                }
+                else
+                {
+                    Console.WriteLine($" -> {shape.ShapeName}\'s not pointy!");
+                }
+            }
         }
 
         private static void WorkWithExceptions()
@@ -54,7 +77,7 @@ namespace ConsoleApp1
             }
             Console.ReadLine();
         }
-
+        /*
         private static void WorkWithPolymporphism()
         {
             Shape[] shapes = { new Hexagon("Joe"), new Circle("Max"), new Hexagon("Vladislav"), new Circle("Betty")};
@@ -64,8 +87,10 @@ namespace ConsoleApp1
                 shape.Draw();
             }
         }
+        */
 
-        private static void WotkWithShapes()
+        /*
+        private static void WorkWithShapes()
         {
             Hexagon hex = new Hexagon("John");
             hex.Draw();
@@ -77,6 +102,7 @@ namespace ConsoleApp1
             cir.Paint("green");
             Console.WriteLine();
         }
+        */
 
         private static void WorkWithEmployees()
         {

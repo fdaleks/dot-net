@@ -95,6 +95,13 @@
     <Compile Include="CustomException\Car.cs" />
     <Compile Include="CustomException\Exceptions\CarIsDeadException.cs" />
     <Compile Include="CustomException\Radio.cs" />
+    <Compile Include="CustomInterface\Circle.cs" />
+    <Compile Include="CustomInterface\Hexagon.cs" />
+    <Compile Include="CustomInterface\IPointy.cs" />
+    <Compile Include="CustomInterface\Point.cs" />
+    <Compile Include="CustomInterface\Rectangle.cs" />
+    <Compile Include="CustomInterface\Shape.cs" />
+    <Compile Include="CustomInterface\Triangle.cs" />
     <Compile Include="Employees\BenefitPackage.cs" />
     <Compile Include="Employees\Employee.Core.cs" />
     <Compile Include="Employees\Employee.cs" />
@@ -118,6 +125,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
