@@ -1,8 +1,9 @@
 ﻿using System;
+using CustomInterface.Interfaces;
 
 namespace CustomInterface
 {
-    class Hexagon : Shape, IPointy
+    class Hexagon : Shape, IPointy, IDraw3D
     {
         public Hexagon() { }
         public Hexagon(string name) : base(name) { }
@@ -10,6 +11,11 @@ namespace CustomInterface
         public override void Draw()
         {
             Console.WriteLine($"Hexagon's name is {ShapeName}");
+        }
+
+        public void Draw3D()
+        {
+            Console.WriteLine("Drawing Hexagon in 3D!");
         }
 
         public override void Paint(string color)

@@ -1,4 +1,5 @@
 ﻿using System;
+using CustomInterface.Interfaces;
 
 namespace CustomInterface
 {

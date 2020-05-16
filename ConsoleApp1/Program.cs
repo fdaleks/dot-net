@@ -6,9 +6,13 @@ using Employees;
 //using SimpleException;
 //using CustomException;
 //using CustomException.Exceptions;
-using ProcessMultipleExceptions;
-using ProcessMultipleExceptions.Exceptions;
+//using ProcessMultipleExceptions;
+//using ProcessMultipleExceptions.Exceptions;
 using CustomInterface;
+using CustomInterface.Interfaces;
+using InterfaceHierarchy;
+using InterfaceHierarchy.Interfaces;
+using CustomEnumerator;
 
 namespace ConsoleApp1
 {
@@ -23,9 +27,35 @@ namespace ConsoleApp1
             //WorkWithShapes();
             //WorkWithPolymporphism();
             //WorkWithExceptions();
-            WorkWithInterface();
+            //WorkWithInterface();
+            //WorkWithInterfaceHierarchy();
+            WorkWithCustomEnumerator();
 
             Console.ReadLine();
+        }
+
+        private static void WorkWithCustomEnumerator()
+        {
+            Garage carLot = new Garage();
+
+            foreach (Car car in carLot)
+            {
+                Console.WriteLine($"{car.PetName} is going {car.CurrentSpeed} MPH");
+            }
+        }
+
+        private static void WorkWithInterfaceHierarchy()
+        {
+            Bitmaplmage myBitmap = new Bitmaplmage();
+            myBitmap.Draw();
+            myBitmap.DrawInBoundingBox(10, 10, 100, 150);
+            myBitmap.DrawUpsideDown();
+
+            //if (myBitmap is IAdvancedDraw)
+            //    ((IAdvancedDraw)myBitmap).DrawUpsideDown();
+
+            if (myBitmap is IAdvancedDraw iAdvDraw)
+                iAdvDraw.DrawUpsideDown();
         }
 
         private static void WorkWithInterface()
@@ -46,9 +76,24 @@ namespace ConsoleApp1
                 {
                     Console.WriteLine($" -> {shape.ShapeName}\'s not pointy!");
                 }
+                //if (shape is IDraw3D)
+                //{
+                //    DrawIn3D((IDraw3D)shape);
+                //}
+                if (shape is IDraw3D shape3D)
+                {
+                    DrawIn3D(shape3D);
+                }
             }
         }
 
+        static void DrawIn3D(IDraw3D it3d)
+        {
+            Console.WriteLine(" -> Drawing IDraw3D compatible type");
+            it3d.Draw3D();
+        }
+
+        /*
         private static void WorkWithExceptions()
         {
             Car myCar = new Car("BMW", 90);
@@ -77,6 +122,8 @@ namespace ConsoleApp1
             }
             Console.ReadLine();
         }
+        */
+
         /*
         private static void WorkWithPolymporphism()
         {

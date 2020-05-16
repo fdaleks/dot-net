@@ -92,15 +92,21 @@
   <ItemGroup>
     <Compile Include="Cars\Car.cs" />
     <Compile Include="Cars\MiniVan.cs" />
+    <Compile Include="CustomEnumerator\Car.cs" />
+    <Compile Include="CustomEnumerator\Exceptions\CarIsDeadException.cs" />
+    <Compile Include="CustomEnumerator\Garage.cs" />
+    <Compile Include="CustomEnumerator\Radio.cs" />
     <Compile Include="CustomException\Car.cs" />
     <Compile Include="CustomException\Exceptions\CarIsDeadException.cs" />
     <Compile Include="CustomException\Radio.cs" />
     <Compile Include="CustomInterface\Circle.cs" />
     <Compile Include="CustomInterface\Hexagon.cs" />
-    <Compile Include="CustomInterface\IPointy.cs" />
+    <Compile Include="CustomInterface\Interfaces\IDraw3D.cs" />
+    <Compile Include="CustomInterface\Interfaces\IPointy.cs" />
     <Compile Include="CustomInterface\Point.cs" />
     <Compile Include="CustomInterface\Rectangle.cs" />
     <Compile Include="CustomInterface\Shape.cs" />
+    <Compile Include="CustomInterface\CircleThreeD.cs" />
     <Compile Include="CustomInterface\Triangle.cs" />
     <Compile Include="Employees\BenefitPackage.cs" />
     <Compile Include="Employees\Employee.Core.cs" />
@@ -108,6 +114,9 @@
     <Compile Include="Employees\Manager.cs" />
     <Compile Include="Employees\PTSealedPerson.cs" />
     <Compile Include="Employees\SalesPerson.cs" />
+    <Compile Include="InterfaceHierarchy\Bitmaplmage.cs" />
+    <Compile Include="InterfaceHierarchy\Interfaces\IAdvancedDraw.cs" />
+    <Compile Include="InterfaceHierarchy\Interfaces\IDrawable.cs" />
     <Compile Include="ProcessMultipleExceptions\Car.cs" />
     <Compile Include="ProcessMultipleExceptions\Exceptions\CarIsDeadException.cs" />
     <Compile Include="ProcessMultipleExceptions\Radio.cs" />
@@ -125,7 +134,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="CustomEnumerator\Interfaces\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
